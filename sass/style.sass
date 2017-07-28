@@ -1,0 +1,448 @@
+html
+	font-size: 62.5%
+h1
+	font-size: 2.4rem
+hr
+	box-sizing: content-box
+.clearfix
+	&::after
+		clear: both
+		content: ""
+		display: table
+	&::before
+		content: ""
+		display: table
+#content-wrap
+	display: block
+	width: 100%
+	height: 100%
+	transition: all 0.5s ease-in-out
+#l_pageContentWrap
+	width: 100%
+	min-height: 100%
+.l_pageContent
+	width: 100%
+	min-height: 100%
+.l_landingWrap
+	width: 100%
+	// position: relative
+	min-height: 100%
+	height: 100%
+	overflow: hidden
+.l_section
+	width: 100%
+	height: 100%
+	transition: opacity 0.5s ease-in-out
+	.l_bgWrap
+		position: absolute
+		width: 100%
+		height: 100%
+		z-index: 0
+		.child_bg-top
+			position: relative
+			width: 100%
+			height: 100%
+			background: url("../images/bg_intro.png") center no-repeat
+			background-size: cover
+		.child_bg-bot
+			position: absolute
+			left: 0
+			right: 0
+			bottom: 0
+			width: 100%
+			height: 108px
+			background: linear-gradient(to bottom,#eee 0%,#fff 51%)
+	.l_inside
+		z-index: 1
+		width: 100%
+		height: 100%
+		margin: 0 auto
+		position: relative
+.this-absoluteBox
+	position: absolute
+	left: 0
+	right: 0
+	top: 0
+	bottom: 0
+.l_landingWrapNav
+	position: absolute
+	right: 3%
+	top: 50%
+	z-index: 8
+	transition: all 0.5s cubic-bezier(0.175,0.885,0.32,1.275)
+	&.this-intro a::before
+		border: 2px #fff solid
+	a
+		position: relative
+		display: block
+		width: 24px
+		height: 24px
+		margin: 0 -12px 7px 0
+		&::before
+			content: ""
+			display: block
+			width: 10px
+			height: 10px
+			border: 2px #4c3d2b solid
+			border-radius: 50%
+			box-sizing: border-box
+			position: absolute
+			left: 0
+			right: 0
+			top: 0
+			bottom: 0
+			margin: auto
+			transition: border 0.5s ease-in-out
+		&::after
+			content: ""
+			display: block
+			width: 24px
+			height: 24px
+			border: 2px #ECB44C	solid
+			border-radius: 50%
+			box-sizing: border-box
+			position: absolute
+			left: 0
+			top: 0
+			transform: scale(0)
+			transition: transform 0.5s ease-in-out 0.5s	
+	a.this-active
+		pointer-events: none
+		&::before
+			border: 5px #ECB44C solid
+		&::after
+			transform: scale(1)
+.l_fuulwidth
+	width: 100%
+	min-width: 980px
+	position: relative
+
+#s_pageFooter
+	position: fixed
+	left: 0
+	right: 0
+	bottom: 0
+	width: 100%
+	height: 80px
+	z-index: 10
+	padding: 0
+	pointer-events: none
+	transition: transform 0.5s ease-out 2s
+	.child-arrowDown
+		width: 42px
+		height: 42px
+		position: absolute
+		left: 0
+		right: 0
+		top: 0
+		bottom: 0
+		margin: auto
+		background: url("../images/downarrow.svg")
+		background-size: cover
+		cursor: pointers
+		opacity: 0
+		pointer-events: none
+		transition: all 0.3s ease-out
+	&.this-intro 
+		.child-arrowDown
+			opacity: 1
+			pointer-events: auto
+
+#s_landingIntro
+	overflow: hidden
+	opacity: 1
+	.this-active
+		.l_bgWrap
+			.child_bg-top
+				transition: all 0.5s ease-out
+	.child-textWrap
+		padding: 145px 0 300px 0
+		position: absolute
+		top: 50%
+		left: 12%
+		transform: translateY(-50%)
+	.child-logo
+		display: block
+		// width: 300px
+		height: 300px
+		background: url("../images/logo.png") center no-repeat
+		overflow: hidden
+		text-indent: 100%
+		white-space: nowrap
+		transform: scale(0.7)
+		margin-bottom: -30px
+	.child-title
+		font-size: 5.6rem
+		color: #fff
+		margin: 0 auto
+	.child-paragraph
+		font-size: 3rem
+		line-height: 72px
+		color: #fff
+		font-weight: 300
+		margin: 28px 0
+		span
+			font-size: 4rem
+			color: #FFB035
+	.child-button
+		display: block
+		float: left
+		width: 220px
+		margin-right: 36px
+		img
+			width: 100%
+	.child-phoneWrap
+		position: absolute
+		right: 6%
+		height: 952px
+		top: 0
+		bottom: 0
+		margin: auto 0
+		transform-origin: right center
+	.child-phoneFront
+		display: block
+		width: 536px
+		height: 620px
+		position: absolute
+		bottom: 30px
+		right: 140px
+		background-size: 100% 100%
+		background-image: url("../images/landing1-phones.png")
+		transition: all 0.5s ease-out
+#s_landingSection1
+	overflow: hidden
+	.child-phoneWrap
+		position: absolute
+		left: 0
+		bottom: 13%
+		width: 100%
+		height: 100%
+		transform-origin: left top
+		.child-upset
+			position: absolute
+			bottom: 0
+			left: 0
+			width: 1043px
+			height: 693px
+			background-size: 100% 100%
+			background-image: url("../images/upset.png")
+	.child-textWrap
+		position: absolute
+		right: 10%
+		top: 50%
+		width: 585px
+		transform-origin: right center
+		h2
+			font-size: 4.8rem
+			color: #303030
+			font-weight: 300
+			transition: all 0.1s cubic-bezier(0,0,0.15,1) 0.5s
+		li
+			font-size: 3rem
+			color: #FBC732
+			margin-bottom: 20px
+			transition: all 0.1s cubic-bezier(0,0,0.15,1) 0.6s
+			span
+				color: #303030
+#s_landingSection2
+	.child_bg
+		position: relative
+		width: 100%
+		height: 100%
+		background: url("../images/bg_section2.png") center no-repeat
+		background-size: cover
+	h2
+		font-size: 4.8rem
+		color: #303030
+		text-align: center
+		transform-origin: center
+		padding: 40px 0
+		span
+			font-size: 5.6rem
+			color: #FFB035
+	.child-phoneWrap
+		position: absolute
+		left: 0
+		bottom: 0
+		width: 100%
+		height: 100%
+		transform-origin: center bottom
+	.child-phone1
+		position: absolute
+		left: 5.33%
+		bottom: -392px
+		width: 478px
+		height: 949px
+		background-size: 100%
+		background-image: url("../images/phone1.png")
+	.child-phone2
+		position: absolute
+		left: 36.23%
+		bottom: -302px
+		width: 520px
+		height: 949px
+		background-size: 100%
+		background-image: url("../images/phone2.png")
+	.child-phone3
+		position: absolute
+		left: 67.77%
+		bottom: -362px
+		width: 548px
+		height: 949px
+		background-size: 100%
+		background-image: url("../images/phone3.png")
+#s_landingSection3
+	.child-bg
+		position: relative
+		width: 100%
+		height: 100%
+		background: url("../images/bg_section3.png") center no-repeat
+		background-size: cover
+	.child-textWrap
+		position: absolute
+		left: 10%
+		top: 42%
+		width: 622px
+		transform-origin: left center
+		h2
+			font-size: 4.8rem
+			color: #FFB035
+			font-weight: 500
+			transition: all 0.1s cubic-bezier(0,0,0.15,1) 0.5s
+		p
+			font-size: 3rem
+			color: #303030
+			margin-bottom: 20px
+			transition: all 0.1s cubic-bezier(0,0,0.15,1) 0.6s
+		hr
+			width: 400px
+			height: 0
+			border: 0
+			border-bottom: 4px #ECECEC solid
+			outline: 0
+			margin: 30px 0 50px
+	.child-phoneWrap
+		position: absolute
+		right: 0
+		bottom: 0
+		width: 100%
+		height: 100%
+		transform-origin: right bottom
+	.child-phone
+		position: absolute
+		right: 10%
+		top: -33%
+		width: 920px
+		height: 1315px
+		background-size: 100%
+		background-image: url("../images/phone4.png")
+#s_landingSection4
+	.child-bg
+		position: relative
+		width: 100%
+		height: 100%
+		background: url("../images/bg_section3.png") center no-repeat
+		background-size: cover
+	.child-textWrap
+		position: absolute
+		right: 13%
+		top: 36%
+		width: 750px
+		transform-origin: right center
+		h2
+			font-size: 4.8rem
+			color: #FFB035
+			font-weight: 500
+			transition: all 0.1s cubic-bezier(0,0,0.15,1) 0.5s
+		p
+			font-size: 3rem
+			color: #303030
+			margin-bottom: 20px
+			transition: all 0.1s cubic-bezier(0,0,0.15,1) 0.6s
+		hr
+			width: 400px
+			height: 0
+			border: 0
+			border-bottom: 4px #ECECEC solid
+			outline: 0
+			margin: 30px 0 50px
+	.child-phoneWrap
+		position: absolute
+		left: 0
+		bottom: 0
+		width: 100%
+		height: 100%
+		transform-origin: left center
+	.child-phoneBack
+		position: absolute
+		left: 10%
+		bottom: -668px
+		width: 477px
+		height: 1400px
+		background-size: 100%
+		background-image: url("../images/phone6.png")
+	.child-phoneFront
+		position: absolute
+		left: 22.83%
+		bottom: -394px
+		width: 510px
+		height: 1268px
+		background-size: 100%
+		background-image: url("../images/phone5.png")
+#s_landingSection5
+	.child-bg
+		position: relative
+		width: 100%
+		height: 100%
+		background: url("../images/bg_section3.png") center no-repeat
+		background-size: cover
+	.child-textWrap
+		position: absolute
+		left: 10%
+		top: 20%
+		width: 720px
+		transform-origin: left center
+		h2
+			font-size: 4.8rem
+			color: #FFB035
+			font-weight: 500
+			transition: all 0.1s cubic-bezier(0,0,0.15,1) 0.5s
+		p
+			font-size: 3rem
+			color: #303030
+			margin-bottom: 20px
+			transition: all 0.1s cubic-bezier(0,0,0.15,1) 0.6s
+		hr
+			width: 400px
+			height: 0
+			border: 0
+			border-bottom: 4px #ECECEC solid
+			outline: 0
+			margin: 30px 0 50px
+	.child-phoneWrap
+		position: absolute
+		right: 0
+		bottom: 0
+		width: 100%
+		height: 100%
+		transform-origin: right center
+	.child-phoneTop
+		position: absolute
+		right: 22.83%
+		bottom: 489px
+		width: 565px
+		height: 756px
+		background-size: 100%
+		background-image: url("../images/phone7.png")
+		background-repeat: no-repeat
+		transform: rotate(135deg)
+	.child-phoneBot
+		position: absolute
+		right: 28.83%
+		bottom: -36%
+		width: 457px
+		height: 673px
+		background-size: 100%
+		background-image: url("../images/phone8.png")
+		background-repeat: no-repeat
+		transform: rotate(-45deg)
