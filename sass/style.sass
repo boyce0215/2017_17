@@ -1,3 +1,4 @@
+@charset "UTF-8"
 html
 	font-size: 62.5%
 h1
@@ -32,26 +33,13 @@ hr
 .l_section
 	width: 100%
 	height: 100%
-	transition: opacity 0.5s ease-in-out
+	opacity: 0
+	pointer-events: auto
 	.l_bgWrap
 		position: absolute
 		width: 100%
 		height: 100%
 		z-index: 0
-		.child_bg-top
-			position: relative
-			width: 100%
-			height: 100%
-			background: url("../images/bg_intro.png") center no-repeat
-			background-size: cover
-		.child_bg-bot
-			position: absolute
-			left: 0
-			right: 0
-			bottom: 0
-			width: 100%
-			height: 108px
-			background: linear-gradient(to bottom,#eee 0%,#fff 51%)
 	.l_inside
 		z-index: 1
 		width: 100%
@@ -71,6 +59,8 @@ hr
 	z-index: 8
 	transition: all 0.5s cubic-bezier(0.175,0.885,0.32,1.275)
 	&.this-intro a::before
+		border: 2px #fff solid
+	&.this-last a::before
 		border: 2px #fff solid
 	a
 		position: relative
@@ -150,11 +140,21 @@ hr
 
 #s_landingIntro
 	overflow: hidden
-	opacity: 1
-	.this-active
-		.l_bgWrap
-			.child_bg-top
-				transition: all 0.5s ease-out
+	.l_bgWrap
+		.child_bg-top
+			position: relative
+			width: 100%
+			height: 100%
+			background: url("../images/bg_intro.png") center no-repeat
+			background-size: cover
+		.child_bg-bot
+			position: absolute
+			left: 0
+			right: 0
+			bottom: 0
+			width: 100%
+			height: 108px
+			background: linear-gradient(to bottom,#eee 0%,#fff 51%)
 	.child-textWrap
 		padding: 145px 0 300px 0
 		position: absolute
@@ -208,30 +208,37 @@ hr
 		right: 140px
 		background-size: 100% 100%
 		background-image: url("../images/landing1-phones.png")
-		transition: all 0.5s ease-out
 #s_landingSection1
 	overflow: hidden
-	.child-phoneWrap
+	.child-bgWrap
 		position: absolute
 		left: 0
-		bottom: 13%
-		width: 100%
+		bottom: 0
+		width: 60%
 		height: 100%
-		transform-origin: left top
 		.child-upset
 			position: absolute
 			bottom: 0
 			left: 0
-			width: 1043px
-			height: 693px
-			background-size: 100% 100%
+			width: 100%
+			height: 100%
+			background-size: cover
 			background-image: url("../images/upset.png")
+			background-position: right
+			&::before
+				content: ''
+				position: absolute
+				top: 0
+				bottom: 0
+				left: 0
+				right: 0
+				background-image: linear-gradient(to bottom right,rgba(0,0,0,0) 50%,#fff)
 	.child-textWrap
 		position: absolute
 		right: 10%
 		top: 50%
 		width: 585px
-		transform-origin: right center
+		transform: translateY(-50%) 
 		h2
 			font-size: 4.8rem
 			color: #303030
@@ -245,63 +252,67 @@ hr
 			span
 				color: #303030
 #s_landingSection2
+	overflow: hidden
 	.child_bg
 		position: relative
 		width: 100%
 		height: 100%
-		background: url("../images/bg_section2.png") center no-repeat
+		background: url("../images/bg_section5.png") center no-repeat
 		background-size: cover
 	h2
 		font-size: 4.8rem
 		color: #303030
 		text-align: center
 		transform-origin: center
-		padding: 40px 0
+		padding: 40px 0 20pxr
 		span
 			font-size: 5.6rem
 			color: #FFB035
+	h3
+		font-size: 4rem
+		color: #303030
+		text-align: center
+		transform-origin: center
 	.child-phoneWrap
 		position: absolute
 		left: 0
 		bottom: 0
 		width: 100%
 		height: 100%
-		transform-origin: center bottom
+		transform-origin: left center
 	.child-phone1
 		position: absolute
-		left: 5.33%
-		bottom: -392px
+		left: 6%
 		width: 478px
-		height: 949px
+		height: 1002px
 		background-size: 100%
 		background-image: url("../images/phone1.png")
 	.child-phone2
 		position: absolute
-		left: 36.23%
-		bottom: -302px
+		left: 37%
 		width: 520px
-		height: 949px
+		height: 1047px
 		background-size: 100%
 		background-image: url("../images/phone2.png")
 	.child-phone3
 		position: absolute
-		left: 67.77%
-		bottom: -362px
+		left: 70%
 		width: 548px
-		height: 949px
+		height: 1042px
 		background-size: 100%
 		background-image: url("../images/phone3.png")
 #s_landingSection3
+	overflow: hidden
 	.child-bg
 		position: relative
 		width: 100%
 		height: 100%
-		background: url("../images/bg_section3.png") center no-repeat
+		background: url("../images/bg_section4.png") center no-repeat
 		background-size: cover
 	.child-textWrap
 		position: absolute
 		left: 10%
-		top: 42%
+		top: 36%
 		width: 622px
 		transform-origin: left center
 		h2
@@ -331,17 +342,17 @@ hr
 	.child-phone
 		position: absolute
 		right: 10%
-		top: -33%
 		width: 920px
-		height: 1315px
+		height: 1455px
 		background-size: 100%
 		background-image: url("../images/phone4.png")
 #s_landingSection4
+	overflow: hidden
 	.child-bg
 		position: relative
 		width: 100%
 		height: 100%
-		background: url("../images/bg_section3.png") center no-repeat
+		background: url("../images/bg_section4.png") center no-repeat
 		background-size: cover
 	.child-textWrap
 		position: absolute
@@ -390,16 +401,17 @@ hr
 		background-size: 100%
 		background-image: url("../images/phone5.png")
 #s_landingSection5
+	overflow: hidden
 	.child-bg
 		position: relative
 		width: 100%
 		height: 100%
-		background: url("../images/bg_section3.png") center no-repeat
+		background: url("../images/bg_section4.png") center no-repeat
 		background-size: cover
 	.child-textWrap
 		position: absolute
 		left: 10%
-		top: 20%
+		top: 36%
 		width: 720px
 		transform-origin: left center
 		h2
@@ -431,18 +443,655 @@ hr
 		right: 22.83%
 		bottom: 489px
 		width: 565px
-		height: 756px
+		height: 892px
 		background-size: 100%
 		background-image: url("../images/phone7.png")
 		background-repeat: no-repeat
-		transform: rotate(135deg)
 	.child-phoneBot
 		position: absolute
-		right: 28.83%
-		bottom: -36%
+		right: 24.83%
+		bottom: -44%
 		width: 457px
-		height: 673px
+		height: 920px
 		background-size: 100%
 		background-image: url("../images/phone8.png")
 		background-repeat: no-repeat
-		transform: rotate(-45deg)
+#s_landingSection6
+	overflow: hidden
+	.child-columnLeftWrap
+		position: absolute
+		left: 4%
+		top: 0
+		bottom: 0
+		right: 45%
+		h2
+			font-size: 4.8rem
+			color: #FFB035
+			font-weight: 500
+		.child-android
+			position: absolute
+			width: 420px
+			height: 750px
+			background-size: 100%
+			background-image: url("../images/androidstore.png")
+			background-repeat: no-repeat
+		.child-ios
+			position: absolute
+			width: 420px
+			height: 750px
+			left: 55%
+			background-size: 100%
+			background-image: url("../images/iosstore.png")
+			background-repeat: no-repeat
+	.child-columnRightWrap
+		position: absolute
+		left: 50%
+		top: 0
+		bottom: 0
+		right: 0
+	.child-columnRight
+		width: 580px
+		border-left: 1px solid #e5ebee
+		float: left
+		padding: 64px 0
+		position: absolute
+		margin-left: 5%
+		left: 0
+		// top: 50%
+		height: 90%
+		// transform: translateY(50%)
+		transform-origin: right center
+		.child-quote
+			position: relative
+			margin: 0
+			padding: 0 0 80px 45px
+			pointer-events: auto
+			transition: all 0.5s ease-in-out
+			&::before
+				content: ""
+				position: absolute
+				display: block
+				left: -20px
+				top: -5px
+				width: 40px
+				height: 40px
+			p
+				color: #616161
+				font-size: 2.6rem
+				font-weight: 300
+				strong
+					font-weight: 700
+					color: #606060
+					text-transform: uppercase
+					padding-left: 6px
+		.child-quote.this-apple::before
+			background: url("../images/appleicon.png") center no-repeat
+			background-size: cover
+		.child-quote.this-android::before
+			background: url("../images/androidicon.png") center no-repeat
+			background-size: cover
+#s_landingSection7
+	overflow: hidden
+	.child-textWrap
+		.child-title
+			font-size: 4.8rem
+			color: #FF6767
+			text-align: center
+			transform-origin: center
+			padding: 40px 0 0
+		li
+			font-size: 3.2rem
+			color: #606060
+			margin-left: 28%
+	.child-priceWrap
+		margin-top: 60px
+		ul
+			list-style-type: none
+			padding: 0
+			li
+				display: inline-block
+				width: 466px
+				height: 390px
+				border: 2px solid #8D3C3A
+				text-align: center
+				box-sizing: border-box
+				position: relative
+				margin-left: 60px
+				h3
+					color: #8D3C3A
+					font-size: 4.8rem
+					margin: 20px 0 10px
+				h4
+					color: #606060
+					font-size: 4rem
+					margin: 0
+					margin: 20px 0 52px
+				h5
+					color: #606060
+					font-size: 2.4rem
+					margin: 0
+					text-decoration: line-through
+				.button-buy
+					color: #fff
+					font-size: 4rem
+					padding: 8px 88px
+					background-color: #FF6767
+					text-decoration: none
+					margin-top: 20px
+			li.this-cheapest
+				background-color: #8D3C3A
+				margin-left: 8%
+				&::before
+					content: "最便宜"
+					background-color: #FFE292
+					color: #8D3C3A
+					padding: 4px 60px
+					font-size: 3rem
+					position: absolute
+					top: -40px
+					left: 126px
+				h3
+					color: #FFE292
+				h4
+					color: #fff
+				h5
+					color: #fff
+#s_landingSection8
+	overflow: hidden
+	.l_bgWrap
+		.child_bg
+			position: relative
+			width: 100%
+			height: 100%
+			background: url("../images/bg_section8.png") center no-repeat
+			background-size: cover
+	.child-textWrap
+		padding: 145px 0 300px 0
+		position: absolute
+		left: 0
+		right: 0
+		transform-origin: center
+		// transform: translateY(-50%)
+	.child-logo
+		display: block
+		// width: 300px
+		height: 300px
+		background: url("../images/logo.png") center no-repeat
+		overflow: hidden
+		text-indent: 100%
+	.child-title
+		font-size: 5.6rem
+		color: #fff
+		margin: 40px auto 60px
+		text-align: center
+	.child-buttonWrap
+		margin: 0 auto
+		position: absolute
+		left: 0
+		right: 0
+		text-align: center
+	.child-button
+		display: block
+		float: left
+		width: 320px
+		margin-right: 80px
+		img
+			width: 100%
+		&:first-child
+			margin-left: 30%
+.desktop
+	.l_section
+		transition: opacity 0.5s ease-in-out
+	.l_section.this-active
+		opacity: 1
+		pointer-events: auto
+	#s_landingIntro
+		.l_bgWrap
+			.child_bg-bot
+				transition: all 0.5s ease-out
+		.l_inside
+			transition: all 0.5s ease-out
+		.child-textWrap
+			transform-origin: left center
+		.child-logo
+			opacity: 0
+			transform: translateY(-50px)
+			transition: all 0.3s ease-out
+		.child-title
+			opacity: 0
+			transform: translateY(-50px)
+			transition: all 0.3s ease-out 0.1s
+		.child-paragraph
+			opacity: 0
+			transform: translateY(-50px)
+			transition: all 0.3s ease-out 0.2s
+		.child-buttonWrap
+			opacity: 0
+			transform: translateY(-50px)
+			transition: all 0.3s ease-out 0.3s
+		.child-phoneFront
+			opacity: 0
+			transform: translateY(-100px)
+			transition: all 0.5s ease-out
+	#s_landingIntro.this-active
+		.l_bgWrap
+			.child_bg-top
+				transition: all 0.5s ease-out
+		.child-logo
+			opacity: 1
+			transform: translateY(0) scale(0.7)
+		.child-title
+			opacity: 1
+			transform: translateY(0)
+		.child-paragraph
+			opacity: 1
+			transform: translateY(0)
+		.child-buttonWrap
+			opacity: 1
+			transform: translateY(0)
+		.child-phoneFront
+			opacity: 1
+			transform: translateY(0)
+	#s_landingIntro.this-goDown
+		.l_bgWrap
+			.child_bg-top
+				transition: all 0.5s ease-out
+				transform: translateY(-100%)
+				opacity: 0
+			.child_bg-bot
+				transform: translateY(108px)
+				opacity: 0
+		.l_inside
+			transform: translateY(-60%)
+			opacity: 0
+	#s_landingSection1
+		.child-bgWrap
+			opacity: 0
+			transition: all 0.5s ease-out
+		.child-textWrap
+			transform-origin: right center
+			h2
+				transform: translateX(40px)
+				opacity: 0
+				transition: all 0.1s cubic-bezier(0,0,0.15,1) 0.5s
+			li
+				transform: translateX(40px)
+				opacity: 0
+				transition: all 0.1s cubic-bezier(0,0,0.15,1) 0.55s
+	#s_landingSection1.this-active
+		.child-bgWrap
+			opacity: 1
+		.child-textWrap
+			h2
+				transform: translateX(0)
+				opacity: 1
+			li
+				transform: translateX(0)
+				opacity: 1
+	#s_landingSection1.this-goDown
+		.child-bgWrap
+			opacity: 0
+			transition: all 0.5s ease-out
+		.child-textWrap
+			h2
+				transform: translateY(-200px)
+				opacity: 0
+				transition: all 0.1s cubic-bezier(0,0,0.15,1)
+			li
+				transform: translateY(-50px)
+				opacity: 0
+				transition: all 0.1s cubic-bezier(0,0,0.15,1) 0.05s
+	#s_landingSection1.this-goUp
+		.child-bgWrap
+			opacity: 0
+			transition: all 0.5s ease-out
+		.child-textWrap
+			h2
+				transform: translateY(200px)
+				opacity: 0
+				transition: all 0.1s cubic-bezier(0,0,0.15,1)
+			li
+				transform: translateX(50px)
+				opacity: 0
+				transition: all 0.1s cubic-bezier(0,0,0.15,1) 0.05s
+	#s_landingSection2
+		.child_bg
+			transition: all 0.5s ease-out
+		.l_inside
+			transition: all 0.5s ease-out
+			h2
+				opacity: 0
+				transform: translateY(-50px)
+				transition: all 0.3s ease-out
+			h3
+				opacity: 0
+				transform: transleatY(-50px)
+				transition: all 0.3 ease-out 
+			.child-phone1
+				opacity: 0
+				transform: translateY(100%)
+				transition: all 0.3s ease-out 0.1s
+			.child-phone2
+				opacity: 0
+				transform: translateY(100%)
+				transition: all 0.3s ease-out 0.2s
+			.child-phone3
+				opacity: 0
+				transform: translateY(100%)
+				transition: all 0.3s ease-out 0.3s
+	#s_landingSection2.this-active
+		.l_inside
+			h2
+				opacity: 1
+				transform: translateY(0)
+			h3
+				opacity: 1
+				transform: translateY(0)
+			.child-phone1
+				opacity: 1
+				transform: translateY(50%) scale(1)
+			.child-phone2
+				opacity: 1
+				transform: translateY(38%) scale(1)
+			.child-phone3
+				opacity: 1
+				transform: translateY(45%) scale(1)
+	#s_landingSection2.this-goDown
+		.child_bg
+			opacity: 0
+			transform: translateY(-100%)
+		.l_inside
+			opacity: 0
+			transform: translateY(-60%)
+	#s_landingSection2.this-goUp
+		.child_bg
+			opacity: 0
+			transform: translateY(100%)
+		.l_inside
+			opacity: 0
+			transform: translateY(60%)
+	#s_landingSection3
+		.child-bg
+			transition: all 0.5s ease-out
+		.l_inside
+			transition: all 0.5s ease-out
+			h2
+				opacity: 0
+				transform: translateX(-40px)
+				transition: all 0.1s cubic-bezier(0,0,0.15,1) 0.5s
+			hr
+				opacity: 0
+				transform: translateX(-40px)
+				transition: all 0.1s cubic-bezier(0,0,0.15,1) 0.55s
+			p
+				opacity: 0
+				transform: translateX(-40px)
+				transition: all 0.1s cubic-bezier(0,0,0.15,1) 0.6s
+			.child-phone
+				opacity: 0
+				transform: translateY(100%)
+				transition: all 0.1s cubic-bezier(0,0,0.15,1) 0.6s
+	#s_landingSection3.this-active
+		.l_inside
+			h2
+				opacity: 1
+				transform: translateX(0)
+			hr
+				opacity: 1
+				transform: translateX(0)
+			p
+				opacity: 1
+				transform: translateX(0)
+			.child-phone
+				opacity: 1
+				transform: translateY(-20%)
+	#s_landingSection3.this-goDown
+		.child_bg
+			opacity: 0
+			transform: translateY(-100%)
+		.l_inside
+			opacity: 0
+			transform: translateY(-60%)
+	#s_landingSection3.this-goUp
+		.child_bg
+			opacity: 0
+			transform: translateY(100%)
+		.l_inside
+			opacity: 0
+			transform: translateY(60%)
+	#s_landingSection4
+		.child-bg
+			transition: all 0.5s ease-out
+		.l_inside
+			transition: all 0.5s ease-out
+			.child-phoneBack
+				opacity: 0
+				transform: scale(0.7) translateY(40%) translateX(20px)
+				transition: all 0.4s cubic-bezier(0.25,0,0.9,1) 0.5s
+			.child-phoneFront
+				opacity: 0
+				transform: scale(0.7) translateY(40%) translateX(20px)
+				transition: all 0.5s cubic-bezier(0,0,0.15,1) 0.5s
+			h2
+				opacity: 0
+				transform: translateX(40px)
+				transition: all 0.1s cubic-bezier(0,0,0.15,1) 0.5s
+			hr
+				opacity: 0
+				transform: translateX(40px)
+				transition: all 0.1s cubic-bezier(0,0,0.15,1) 0.55s
+			p
+				opacity: 0
+				transform: translateX(40px)
+				transition: all 0.1s cubic-bezier(0,0,0.15,1) 0.6s
+	#s_landingSection4.this-active
+		.l_inside
+			h2
+				opacity: 1
+				transform: translateX(0)
+			hr
+				opacity: 1
+				transform: translateX(0)
+			p
+				opacity: 1
+				transform: translateX(0)
+			.child-phoneBack
+				opacity: 1
+				transform: scale(1)
+			.child-phoneFront
+				opacity: 1
+				transform: scale(1)
+	#s_landingSection4.this-goDown
+		.child_bg
+			opacity: 0
+			transform: translateY(-100%)
+		.l_inside
+			opacity: 0
+			transform: translateY(-60%)
+	#s_landingSection4.this-goUp
+		.child_bg
+			opacity: 0
+			transform: translateY(100%)
+		.l_inside
+			opacity: 0
+			transform: translateY(60%)
+	#s_landingSection5
+		.child-bg
+			transition: all 0.5s ease-out
+		.l_inside
+			transition: all 0.5s ease-out
+			h2
+				opacity: 0
+				transform: translateX(-40px)
+				transition: all 0.1s cubic-bezier(0,0,0.15,1) 0.5s
+			hr
+				opacity: 0
+				transform: translateX(-40px)
+				transition: all 0.1s cubic-bezier(0,0,0.15,1) 0.55s
+			p
+				opacity: 0
+				transform: translateX(-40px)
+				transition: all 0.1s cubic-bezier(0,0,0.15,1) 0.6s
+			.child-phoneTop
+				opacity: 0
+				transform: translateY(-100%) translateX(-50%) rotate(135deg)
+				transition: all 0.1s cubic-bezier(0,0,0.15,1) 0.6s
+			.child-phoneBot
+				opacity: 0
+				transform: translateY(100%) translateX(50%) rotate(-45deg)
+				transition: all 0.1s cubic-bezier(0,0,0.15,1) 0.6s
+	#s_landingSection5.this-active
+		.l_inside
+			h2
+				opacity: 1
+				transform: translateX(0)
+			hr
+				opacity: 1
+				transform: translateX(0)
+			p
+				opacity: 1
+				transform: translateX(0)
+			.child-phoneTop
+				opacity: 1
+				transform: translateY(0) rotate(135deg)
+			.child-phoneBot
+				opacity: 1
+				transform: translateY(0) rotate(-45deg)
+	#s_landingSection5.this-goDown
+		.child_bg
+			opacity: 0
+			transform: translateY(-100%)
+		.l_inside
+			opacity: 0
+			transform: translateY(-60%)
+	#s_landingSection5.this-goUp
+		.child_bg
+			opacity: 0
+			transform: translateY(100%)
+		.l_inside
+			opacity: 0
+			transform: translateY(60%)
+	#s_landingSection6
+		.l_inside
+			transition: all 0.5s ease-out
+		.child-columnLeftWrap
+			transform-origin: left 30%
+		h2
+			opacity: 0
+			transform: translateY(-50px)
+			transition: all 0.5s ease-out 0.5s
+		.child-android
+			opacity: 0
+			transform: translateX(-100px)
+			transition: all 0.3s ease-out 0.7s
+		.child-ios
+			opacity: 0
+			transform: translateX(-100px)
+			transition: all 0.3s ease-out 0.7s
+		.child-columnRightWrap
+			transform-origin: right 30%
+		.child-columnRight
+			opacity: 0
+			transition: opacity 0.3s ease-out 0.5s
+		.child-quote
+			opacity: 0
+			transition: all 0.5s ease-in-out
+	#s_landingSection6.this-active
+		h2
+			opacity: 1
+			transform: translateY(0)
+			transition: all 0.5s ease-in-out
+		.child-android
+			opacity: 1
+			transform: translateX(0)
+		.child-ios
+			opacity: 1
+			transform: translateX(0)
+		.child-quote
+			opacity: 1
+		.child-columnRight
+			opacity: 1
+	#s_landingSection6.this-goDown
+		.l_inside
+			opacity: 0
+			transform: translateY(-60%)
+	#s_landingSection6.this-goUp
+		.l_inside
+			opacity: 0
+			transform: translateY(60%)
+	#s_landingSection7
+		.l_inside
+			transition: all 0.5s ease-out
+		.child-textWrap
+			h2
+				transform: translateY(50px)
+				opacity: 0
+				transition: all 0.1s cubic-bezier(0,0,0.15,1) 0.5s
+			li
+				transform: translateY(50px)
+				opacity: 0
+				transition: all 0.1s cubic-bezier(0,0,0.15,1) 0.55s
+		.child-priceWrap
+			li
+				opacity: 0
+				transition: all 0.1s cubic-bezier(0,0,0.15,1) 0.55s
+	#s_landingSection7.this-active
+		.child-textWrap
+			h2
+				transform: translateY(0)
+				opacity: 1
+			li
+				transform: translateY(0)
+				opacity: 1
+		.child-priceWrap
+			li
+				opacity: 1
+	#s_landingSection7.this-goDown
+		.l_inside
+			opacity: 0
+			transform: translateY(-60%)
+	#s_landingSection7.this-goUp
+		.l_inside
+			opacity: 0
+			transform: translateY(60%)
+	#s_landingSection8
+		.child-bg
+			transition: all 0.5s ease-out
+		.l_inside
+			transition: all 0.5s ease-out
+		.child-logo
+			opacity: 0
+			transform: translateY(-50px)
+			transition: all 0.3s ease-out
+		.child-title
+			opacity: 0
+			transform: translateY(-50px)
+			transition: all 0.3s ease-out 0.1s
+		.child-buttonWrap
+			opacity: 0
+			transform: translateY(-50px)
+			transition: all 0.3s ease-out 0.2s
+	#s_landingSection8.this-active
+		.child-logo
+			opacity: 1
+			transform: translateY(0)
+		.child-title
+			opacity: 1
+			transform: translateY(0)
+		.child-buttonWrap
+			opacity: 1
+			transform: translateY(0)
+	#slandingSection8.this-goDown
+		.child_bg
+			opacity: 0
+			transform: translateY(-100%)
+		.l_inside
+			opacity: 0
+			transform: translateY(-60%)
+	#s_landingSection8.this-goUp
+		.child_bg
+			opacity: 0
+			transform: translateY(100%)
+		.l_inside
+			opacity: 0
+			transform: translateY(60%)
